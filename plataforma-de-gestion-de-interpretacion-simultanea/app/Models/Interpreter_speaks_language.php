@@ -5,29 +5,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Interpreter;
-use App\Models\Transport;
-use App\Models\Venue;
+use App\Models\language;
+use App\Models\Level;
 
-class Logistics extends Model
-{
-    class Logistics extends Model
+class interpreter_speaks_language extends Model
 {
     use HasFactory;
+
+    public $table = 'interpreter_speaks_language';
 
     public function interpreter()
     {
         return $this->belongsTo(Interpreter::class);
     }
 
-    public function transport()
+    public function language()
     {
-        return $this->belongsTo(Transport::class);
+        return $this->belongsTo(Language::class);
     }
 
-    public function venue()
+    public function level()
     {
-        return $this->belongsTo(Venue::class);
+        return $this->belongsTo(Level::class);
     }
-}
-
 }

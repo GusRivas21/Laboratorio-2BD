@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('interpreters', function (Blueprint $table) {
             $table->id();
+            $table->string('first_name',75);
+            $table->string('last_name',75);
+            $table->string('experience');
             $table->timestamps();
         });
     }

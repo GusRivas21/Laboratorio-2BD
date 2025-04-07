@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('interpreter_languages', function (Blueprint $table) {
-            $table->id();
+        Schema::create('interpreter_speaks_language', function (Blueprint $table) {
+            $table->foreignId('interpreter_id')->constrained()->onDelete('cascade');
+            $table->foreignId('language_id')->constrained()->onDelete('cascade');
+            $table->foreignId('level_id')->constrained()->onDelete('cascade');
             $table->timestamps();
+            $table->primary(['interpreter_id', 'language_id']);
         });
     }
 
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('interpreter_languages');
+        Schema::dropIfExists('interpreter_speaks_language');
     }
 };

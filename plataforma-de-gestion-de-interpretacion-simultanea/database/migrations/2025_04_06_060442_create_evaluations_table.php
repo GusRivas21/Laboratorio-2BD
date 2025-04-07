@@ -6,13 +6,15 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('evaluations', function (Blueprint $table) {
             $table->id();
+            $table->integer('score');
+            $table->text('comments');
+            $table->foreignId('interpreter_id')->constrained()->onDelete('cascade');
+            $table->foreignId('event_id')->constrained()->onDelete('cascade');
+            $table->foreignId('client_id')->constrained('customers')->onDelete('cascade');
             $table->timestamps();
         });
     }
