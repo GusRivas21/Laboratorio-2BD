@@ -10,6 +10,8 @@ class Evaluators extends Model
 {
     use HasFactory;
 
+    protected $table = 'Evaluators';
+
     public function evaluation()
     {
         return $this->belongsTo(Evaluation::class);

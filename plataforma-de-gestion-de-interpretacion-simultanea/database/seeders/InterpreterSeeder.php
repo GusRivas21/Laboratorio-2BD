@@ -15,5 +15,11 @@ class InterpreterSeeder extends Seeder
             'last_name' => 'Doe',
             'experience' => 'Advanced',
         ]);
+
+        Interpreter::create([
+            'first_name' => 'Jane',
+            'last_name' => 'Smith',
+            'experience' => 'Intermediate',
+        ]);
     }
 }

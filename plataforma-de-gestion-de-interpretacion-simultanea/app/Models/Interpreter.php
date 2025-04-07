@@ -33,4 +33,10 @@ class Interpreter extends Model
     {
         return $this->hasMany(Logistics::class);
     }
+
+    public function assignments()
+    {
+    return $this->hasMany(Assignment::class, 'interpreter_id');
+    }
+
 }

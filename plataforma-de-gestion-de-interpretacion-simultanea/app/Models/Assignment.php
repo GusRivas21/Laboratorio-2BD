@@ -8,7 +8,7 @@ use App\Models\Event;
 
 class Assignment extends Model
 {
-    protected $fillable = ['interpreter_id', 'event_id', 'type'];
+    protected $fillable = ['interpreter_id', 'event_id'];
 
     public function assignInterpreterToEvent($interpreterId, $eventId)
     {
@@ -26,7 +26,6 @@ class Assignment extends Model
             $this->create([
                 'interpreter_id' => $interpreterId,
                 'event_id' => $eventId,
-                'type' => 'assigned',
             ]);
             return true;
         }

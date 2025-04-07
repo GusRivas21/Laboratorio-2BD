@@ -10,14 +10,8 @@ use App\Models\Venue;
 
 class Logistics extends Model
 {
-    class Logistics extends Model
-{
     use HasFactory;
 
-    public function interpreter()
-    {
-        return $this->belongsTo(Interpreter::class);
-    }
 
     public function transport()
     {
@@ -28,6 +22,11 @@ class Logistics extends Model
     {
         return $this->belongsTo(Venue::class);
     }
+
+    public function interpreter()
+    {
+        return $this->belongsTo(Interpreter::class);
+    }
 }
 
-}
+

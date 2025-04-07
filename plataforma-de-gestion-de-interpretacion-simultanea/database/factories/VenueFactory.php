@@ -5,9 +5,6 @@ namespace Database\Factories;
 use App\Models\Venue;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Venue>
- */
 class VenueFactory extends Factory
 {
 

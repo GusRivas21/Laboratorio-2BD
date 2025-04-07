@@ -11,6 +11,8 @@ class Equipment extends Model
 {
     use HasFactory;
 
+    protected $table = 'Equipment';
+
     public function events()
     {
         return $this->belongsToMany(Event::class, 'event_equipment');

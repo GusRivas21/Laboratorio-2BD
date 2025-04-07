@@ -11,10 +11,9 @@ return new class extends Migration
         Schema::create('evaluations', function (Blueprint $table) {
             $table->id();
             $table->integer('score');
-            $table->text('comments');
-            $table->foreignId('interpreter_id')->constrained()->onDelete('cascade');
-            $table->foreignId('event_id')->constrained()->onDelete('cascade');
-            $table->foreignId('client_id')->constrained('customers')->onDelete('cascade');
+            $table->string('comments');
+            $table->unsignedBigInteger('interpreter_id');
+            $table->foreign('interpreter_id')->references('id')->on('interpreters')->onDelete('cascade');
             $table->timestamps();
         });
     }

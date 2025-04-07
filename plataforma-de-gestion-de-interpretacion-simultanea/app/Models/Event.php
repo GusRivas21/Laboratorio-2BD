@@ -47,4 +47,10 @@ class Event extends Model
     {
         return $this->hasMany(Logistics::class);
     }
+
+    public function assignments()
+    {
+    return $this->hasMany(Assignment::class, 'event_id');
+    }
+
 }

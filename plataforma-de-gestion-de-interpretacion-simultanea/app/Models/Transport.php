@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,4 +15,5 @@ class Transport extends Model
     {
         return $this->hasMany(Logistics::class);
     }
+
 }
